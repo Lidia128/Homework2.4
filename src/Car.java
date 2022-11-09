@@ -1,23 +1,42 @@
-public class Car extends Transport {
+public class Car extends Transport implements Improving {
 
-    public Car(String brend, String model, double volume) {
+    private TypeOfBody typeOfBody;
+
+    public Car(String brend, String model, double volume, TypeOfBody typeOfBody) {
         super(brend, model, volume);
-
+        this.typeOfBody = typeOfBody;
     }
+
+        public TypeOfBody getTypeOfBody() {
+            return typeOfBody;
+        }
+
+        public void setTypeOfBody(TypeOfBody typeOfBody) {
+            this.typeOfBody = typeOfBody;
+        }
 
     @Override
     public void infoAvto() {
         super.infoAvto();
     }
+    @Override
+    public void startDrive() {System.out.println("Легковая машина поехала"); }
+    @Override
+    public void stopDrive() {System.out.println("Легковая машина остановилась");}
+    @Override
+    public void pitStop() {System.out.println("Пит-стоп для легковой машины");}
+    @Override
+    public void bestTimeTrack() {System.out.println("Лучшее время круга для легковой машины");}
+    @Override
+    public void maxSpeed() {System.out.println("Максимальная скорость для легковой машины");}
 
     @Override
-    public void startDrive() {
-        super.startDrive();
-    }
-
-    @Override
-    public void stopDrive() {
-        super.stopDrive();
+    public void printType() {
+        if (typeOfBody==null){
+            System.out.println("Данных по авто не достастаточно.");
+        }else {
+            System.out.println("Тип кузова авто: " + typeOfBody);
+        }
     }
 }
 

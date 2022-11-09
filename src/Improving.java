@@ -1,6 +1,6 @@
 public interface Improving {
 
-    void pitStop ();
-    int getBestTimeTrack ();
-    int getMaxSpeed ();
+    public void pitStop ();
+    public void bestTimeTrack ();
+    public void maxSpeed ();
 }

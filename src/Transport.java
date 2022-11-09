@@ -1,4 +1,4 @@
-public abstract  class Transport {
+public abstract  class Transport implements Improving{
 
     private String brend;
     private String model;
@@ -28,6 +28,8 @@ public abstract  class Transport {
     public String getModel() {
         return model;
     }
+
+    public abstract void printType ();
 
 
 

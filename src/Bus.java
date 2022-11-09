@@ -1,21 +1,38 @@
-public class Bus extends Transport  {
-    public Bus(String brend, String model, double volume) {
+public class Bus extends Transport implements Improving {
+
+    private Capacity capacity;
+    public Bus(String brend, String model, double volume, Capacity capacity) {
         super(brend, model, volume);
+        this.capacity = capacity;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
     }
 
     @Override
-    public void startDrive() {
-        super.startDrive();
-    }
-
+    public void startDrive() {System.out.println("Автобус поехал"); }
     @Override
-    public void stopDrive() {
-        super.stopDrive();
-    }
-
+    public void stopDrive() {System.out.println("Автобус остановился");}
     @Override
-    public void infoAvto() {
-        super.infoAvto();
-    }
-}
+    public void infoAvto() {super.infoAvto(); }
+    @Override
+    public void pitStop() {System.out.println("Пит-стоп для автобуса");}
+    @Override
+    public void bestTimeTrack() {System.out.println("Лучшее время круга для автобуса");}
+    @Override
+    public void maxSpeed() {System.out.println("Максимальная скорость для автобуса");}
+    public void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по авто не достастаточно.");
+        } else {
+            System.out.println("Вместимость автобуса: " + capacity.getFrom()+ " чел." + " до "
+                    + capacity.getTo()+ " чел.");
 
+        }
+
+    }}
