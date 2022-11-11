@@ -8,9 +8,7 @@ public abstract  class Transport implements Improving{
         this.brend = brend;
         this.model = model;
         this.volume = volume;
-
     }
-
     public void startDrive() {
         System.out.println("Начать движение.");
     }
@@ -30,6 +28,7 @@ public abstract  class Transport implements Improving{
     }
 
     public abstract void printType ();
+    public abstract boolean service ();
 
 
 

@@ -15,6 +15,12 @@ public class Bus extends Transport implements Improving {
     }
 
     @Override
+    public boolean service() {
+        System.out.println("Автобус " +getBrend() + " " + getBrend()+ " в диагностике не требуется");
+        return false;
+    }
+
+    @Override
     public void startDrive() {System.out.println("Автобус поехал"); }
     @Override
     public void stopDrive() {System.out.println("Автобус остановился");}

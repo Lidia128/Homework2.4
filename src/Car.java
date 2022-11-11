@@ -14,7 +14,10 @@ public class Car extends Transport implements Improving {
         public void setTypeOfBody(TypeOfBody typeOfBody) {
             this.typeOfBody = typeOfBody;
         }
-
+    @Override
+    public boolean service() {
+        return Math.random() > 0.7;
+    }
     @Override
     public void infoAvto() {
         super.infoAvto();
@@ -38,5 +41,7 @@ public class Car extends Transport implements Improving {
             System.out.println("Тип кузова авто: " + typeOfBody);
         }
     }
+
+
 }
 

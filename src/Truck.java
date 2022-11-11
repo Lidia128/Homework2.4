@@ -13,7 +13,10 @@ public class Truck extends Transport implements Improving{
     public void setWeight(Weight weight) {
         this.weight = weight;
     }
-
+    @Override
+    public boolean service() {
+        return Math.random() > 0.75;
+    }
     @Override
     public void startDrive(){System.out.println("Грузовик поехал"); }
     @Override

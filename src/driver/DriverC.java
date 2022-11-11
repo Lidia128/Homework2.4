@@ -1,6 +1,10 @@
-public class DriverB extends Driver{
+package driver;
 
-    public DriverB(String name, String categore, int experience) {
+import driver.Driver;
+
+public class DriverC extends Driver {
+
+    public DriverC(String name, String categore, int experience) {
         super(name, categore, experience);
     }
 

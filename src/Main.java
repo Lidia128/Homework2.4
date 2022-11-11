@@ -1,3 +1,12 @@
+import categore.Categore;
+import categore.CategoreB;
+import categore.CategoreD;
+import categore.CateroreC;
+import driver.Driver;
+import driver.DriverB;
+import driver.DriverC;
+import driver.DriverD;
+
 public class Main {
     public static void main(String[] args) {
         Truck maz = new Truck("маз", "d-985", 3.0, Weight.N1);
@@ -27,18 +36,37 @@ public class Main {
         bus.startDrive();
         bus.stopDrive();
 
-        DriverB <categoreB>olya = new DriverB("Оля", "B", 3);
-        DriverC<categoreC> kolya = new DriverC("Коля", "C", 10);
-        DriverD<categoryD> tolya = new DriverD("Толя", "D", 15);
-        olya.start();
-        kolya.stop();
-        tolya.refuel();
+        service(
+                lada, muzda, bmw, moskvich,
+                maz, kraz, man, vaz,
+                bus, mers, volhganin, ekarus,
+                );
+
+        Driver<CategoreB> driverB = new Driver("Ола", true, 3, new Categore());
+        Driver<CategoreC> driverC = new Driver("Коля", true, 10, new Categore());
+        Driver<CategoreD> driverD = new Driver("Толя", true, 15, new Categore());
+
+        driverB.start();
+        driverC.stop();
+        driverD.refuel();
 
         lada.pitStop();
         maz.bestTimeTrack();
         ekarus.maxSpeed();
-
     }
+    private static void service(Transport... transports) {
+        for (Transport transport : transports) {
+        }
+    }
+    public static void serviceTransport(Transport transport){
+    try {
+        if (!transport.service()) {
+            throw new RuntimeException("Автомобиль" + transport.getBrend() + " " + transport.getModel() + " не прошел диагностику")
+        }
+    }catch (RuntimeException e) {
+        System.out.println();
+    }
+}
     private static void printInfo(Driver<?> driver, Transport transport){
         System.out.println("Водитель" + driver.getName() + " " + transport.getModel() +
                 "будет участвовать в заезде");
