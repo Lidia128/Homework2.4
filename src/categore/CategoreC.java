@@ -1,8 +1,9 @@
 package categore;
 
-public class CategoreD extends Categore{
+public class CategoreC extends Categore{
+
     @Override
     public String toString() {
-        return "D";
+        return "C";
     }
 }

@@ -40,4 +40,9 @@ public class Truck extends Transport implements Improving{
             String to = weight.getTo()==null?"": "до" + weight.getTo() + " т.";
             System.out.println("Грузоплдъемность авто: " + from + to);
         }
-}}
+}
+    @Override
+    public void repair() {
+        System.out.println("Грузовик" + getBrend()+ " "+ getModel() + "починен!");
+    }
+}

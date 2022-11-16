@@ -2,7 +2,7 @@ package driver;
 
 import categore.Categore;
 
-public abstract class Driver<T extends Categore> {
+public class Driver<T extends Categore> {
     private String name;
     private boolean hasDriveverLicense;
     int experience;
@@ -12,8 +12,9 @@ public abstract class Driver<T extends Categore> {
         this.name = name;
         this.hasDriveverLicense = hasDriveverLicense;
         this.experience = experience;
-       setCategore(categore);
+        this.categore = categore;
     }
+
     public String getName() { return name; }
     public boolean isHasDriveverLicense (){return hasDriveverLicense;}
     public void setHasDriveverLicense(boolean hasDriveverLicense) {this.hasDriveverLicense = hasDriveverLicense;}
@@ -30,4 +31,9 @@ public abstract class Driver<T extends Categore> {
     public void stop ( ) {System.out.println("Водитель" + name + "закончил движение");    }
     public void refuel (){System.out.println("Водитель " + name + "заправляет авто");    }
 
+    @Override
+    public String toString() {
+        return name + "стаж вождения:" + hasDriveverLicense + " лет, " + "категория "+ categore;
+
+                  }
 }

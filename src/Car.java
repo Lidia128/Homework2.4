@@ -41,7 +41,10 @@ public class Car extends Transport implements Improving {
             System.out.println("Тип кузова авто: " + typeOfBody);
         }
     }
+    @Override
+    public void repair() {
+        System.out.println("Машина " + getBrend()+ " "+ getModel() + "починена!");
 
-
+    }
 }
 

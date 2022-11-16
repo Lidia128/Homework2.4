@@ -1,11 +1,12 @@
 package driver;
 
+import categore.Categore;
 import driver.Driver;
 
 public class DriverD extends Driver {
 
-    public DriverD(String name, String categore, int experience) {
-        super(name, categore, experience);
+    public DriverD(String name, boolean hasDriveverLicense, int experience, Categore categore) {
+        super(name, hasDriveverLicense, experience, categore);
     }
 
     @Override
