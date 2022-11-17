@@ -1,5 +1,4 @@
 public enum TypeOfBody {
-
     SEDAN,
     HACHBEKk,
     COUPE,
@@ -9,5 +8,4 @@ public enum TypeOfBody {
     PICKAP,
     VAN,
     MINIVAN,
-
 }

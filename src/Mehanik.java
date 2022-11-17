@@ -2,34 +2,17 @@ public class Mehanik <M extends Transport> {
     private final String name;
     private final String surname;
     private final String company;
-
     public Mehanik(String name, String surname, String company) {
         this.name = name;
         this.surname = surname;
-        this.company = company;
-    }
-
+        this.company = company; }
     public String getName() {
-        return name;
-    }
-
+        return name;    }
     public String getSurname() {
-        return surname;
-    }
-
+        return surname;    }
     public String getCompany() {
-        return company;
-    }
-    public boolean service (M t){
-    return t.service();
-    }
-    public void repair (M t){
-
-    }
-
+        return company;    }
     @Override
     public String toString() {
-        return name +" "+ surname + " из "+ company;
-
-    }
+        return name +" "+ surname + " из "+ company;    }
 }

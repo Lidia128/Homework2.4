@@ -6,7 +6,6 @@ import driver.DriverB;
 import driver.DriverC;
 
 import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
        Mehanik<Car> ivan = new Mehanik<>("Иван", "Сухов", "Pirelli");
@@ -42,23 +41,17 @@ public class Main {
         Bus volhganin = new Bus("волжанин", "белый", 3.8, Capacity.MEDIUM);
         Bus ekarus = new Bus("экарус", "красны ", 3.5, Capacity.EXTRA_LARGE);
 
-        maz.infoAvto();
+        maz.infoAuto();
         maz.startDrive();
         maz.stopDrive();
 
-        lada.infoAvto();
+        lada.infoAuto();
         lada.startDrive();
         lada.stopDrive();
 
-        bus.infoAvto();
+        bus.infoAuto();
         bus.startDrive();
         bus.stopDrive();
-
-        service(
-                lada, muzda, bmw, moskvich,
-                maz, kraz, man, vaz,
-                bus, mers, volhganin, ekarus
-                );
 
         Driver<CategoreB> driverB = new Driver<>("Ола", true, 3, new CategoreB());
         Driver<CategoreC> driverC = new Driver<>("Коля", true, 10, new CategoreC());
@@ -75,51 +68,37 @@ public class Main {
         List<Transport> transports = List.of(
                 lada, muzda, bmw, moskvich,
                 maz, kraz, man, vaz,
-                bus, mers, volhganin, ekarus
-                );
+                bus, mers, volhganin, ekarus);
 
         for (Transport transport : transports){
-           printInfo(transport);
+           printInfo(transport); }
     }
-    }
-    private static void service(Transport... transports) {
-        for (Transport transport : transports) {
-        }
-    }
-    public static void serviceTransport(Transport transport){
+   public static void serviceTransport(Transport transport){
     try {
         if (!transport.service()) {
             throw new RuntimeException("Автомобиль" + transport.getBrend() + " " + transport.getModel() +
-                    " не прошел диагностику");
-        }
+                    " не прошел диагностику"); }
     }catch (RuntimeException e) {
-        System.out.println();
-    }
+        System.out.println(); }
 }
     private static void printInfo(Driver<?> driver, Transport transport){
         System.out.println("Водитель" + driver.getName() + " " + transport.getModel() +
                 "будет участвовать в заезде");
-    transport.printType();
-    }
+    transport.printType();}
     private static void printInfo (Transport transport){
         System.out.println("Информация по автомобилю" + transport.getBrend() + " " + transport.getModel());
         System.out.println("Водители:");
         for (Driver<?>driver : transport.getDrivers()){
-            System.out.println(driver.getName());
-        }
+            System.out.println(driver.getName()); }
         System.out.println("Спонсоры:");
         for (Sponsor sponsor : transport.getSponsors()){
-        System.out.println(sponsor.getName());
-    }
+        System.out.println(sponsor.getName());}
         System.out.println("Механики:");
         for (Mehanik<?>mehanik : transport.getMehaniks()){
             System.out.println(mehanik.getName() + " "+ mehanik.getSurname()+ " "+ mehanik.getCompany());
         }
     }
 }
-
-
-
 
 
 

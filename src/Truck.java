@@ -1,29 +1,19 @@
 public class Truck extends Transport implements Improving{
-
     private Weight weight;
     public Truck (String brend, String model, double volume,Weight weight) {
                super(brend, model, volume);
-               this.weight = weight;
-    }
-
-    public Weight getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Weight weight) {
-        this.weight = weight;
-    }
+               this.weight = weight; }
+    public Weight getWeight() { return weight; }
+    public void setWeight(Weight weight) { this.weight = weight; }
     @Override
-    public boolean service() {
-        return Math.random() > 0.75;
-    }
+    public boolean service() {return Math.random() > 0.75; }
     @Override
     public void startDrive(){System.out.println("Грузовик поехал"); }
     @Override
     public void stopDrive() {System.out.println("Грузовик остановился");}
     @Override
-    public void infoAvto() {
-        super.infoAvto();
+    public void infoAuto() {
+        super.infoAuto();
     }
     @Override
     public void pitStop() {System.out.println("Пит-стоп для грузовой машины");}
@@ -38,8 +28,7 @@ public class Truck extends Transport implements Improving{
         }else {
             String from = weight.getFrom()==null?"": "от" + weight.getFrom()+" т.";
             String to = weight.getTo()==null?"": "до" + weight.getTo() + " т.";
-            System.out.println("Грузоплдъемность авто: " + from + to);
-        }
+            System.out.println("Грузоплдъемность авто: " + from + to);}
 }
     @Override
     public void repair() {
