@@ -70,6 +70,12 @@ public class Main {
                 maz, kraz, man, vaz,
                 bus, mers, volhganin, ekarus);
 
+       ServiceStation serviceStation = new ServiceStation();
+       serviceStation.addCar(car);
+       serviceStation.addTruck(truck);
+       serviceStation.service();
+       serviceStation.service();
+
         for (Transport transport : transports){
            printInfo(transport); }
     }
