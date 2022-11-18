@@ -71,8 +71,8 @@ public class Main {
                 bus, mers, volhganin, ekarus);
 
        ServiceStation serviceStation = new ServiceStation();
-       serviceStation.addCar(car);
-       serviceStation.addTruck(truck);
+       serviceStation.addCar(lada);
+       serviceStation.addTruck(maz);
        serviceStation.service();
        serviceStation.service();
 
